@@ -67,14 +67,6 @@
         { "row": 4, "col": 10, "x": 10, "y": 4 }
       ]
     }
-  },
-  "sensors": [
-    {
-      "ref": "left_encoder",
-      "name": "encoder_left",
-      "identifier": "encoder_left",
-      "compatible": "alps,ec11",
-      "label": "LEFT_ENCODER"
-    }
+  }
   ]
 }
