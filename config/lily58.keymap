@@ -52,7 +52,7 @@
                            &kp LGUI  &kp LALT  &kp BACKSPACE         &kp SPACE          &kp ENTER   &to 1  &kp K_CMENU  &kp RIGHT_GUI
             >;
 
-            sensor-bindings = <&inc_dec_kp undefined>;
+            sensor-bindings = <&inc_dec_kp A A>;
         };
 
         lower_layer {
