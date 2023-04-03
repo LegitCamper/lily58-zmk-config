@@ -7,5 +7,10 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+   exposes:
+    - i2c_oled
+   features:
+    - keys
+    - display
   self:
     path: config
