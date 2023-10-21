@@ -6,7 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 // #include <dt-bindings/zmk/ext_power.h>
 /*
@@ -33,9 +32,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <100>;
             quick-tap-ms = <0>;
-            bindings =
-                <&mo>,
-                <&kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -44,26 +41,62 @@
 
         default_layer {
             bindings = <
-  &kp ESC  &kp N1  &kp N2    &kp N3    &kp N4         &kp N5                                       &kp N6      &kp N7         &kp N8   &kp N9         &kp N0      &kp GRAVE
-  &kp TAB   &kp Q   &kp W     &kp E     &kp R          &kp T                                        &kp Y       &kp U          &kp I    &kp O          &kp P  &kp BACKSLASH
-&kp LCTRL   &kp A   &kp S     &kp D     &kp F          &kp G                                        &kp H       &kp J          &kp K    &kp L  &kp SEMICOLON        &kp SQT
-&sk LSHFT   &kp Z   &kp X     &kp C     &kp V          &kp B  &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp N       &kp M      &kp COMMA  &kp DOT       &kp FSLH      &sk RSHFT
-                           &kp LGUI  &kp LALT  &kp BACKSPACE         &kp SPACE          &kp ENTER   &mo 1  &kp DELETE  &kp RIGHT_GUI
+&trans     &trans  &trans  &trans  &trans        &trans                                       &trans  &trans    &trans     &trans   &trans         &trans
+&kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                                        &kp Y   &kp U     &kp I      &kp O    &kp P          &kp BACKSLASH
+&kp LCTRL  &kp A   &kp S   &kp D   &kp F         &kp G                                        &kp H   &kp J     &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&sk LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH       &sk RSHFT
+                           &trans  &kp LEFT_GUI  &mo 2   &kp SPACE         &kp ENTER          &mo 1   &kp LGUI  &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp A A>;
         };
 
         lower_layer {
             bindings = <
-  &kp F1      &kp F2             &kp F3        &kp F4        &kp F5        &kp F6                    &kp F7         &kp F8       &kp F9    &kp F10  &kp F11  &kp F12
-  &trans       &none       &kp C_VOL_UP         &none         &none         &none                  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP    &kp END    &none   &trans
-&kp CAPS  &kp C_PREV  &kp C_VOLUME_DOWN    &kp C_NEXT  &bt BT_SEL 0    &bt BT_CLR                  &kp LEFT       &kp DOWN       &kp UP  &kp RIGHT   &trans   &trans
-  &trans       &none         &kp C_MUTE  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans    &trans      &kp TILDE    &kp MINUS  &kp EQUAL   &trans   &trans
-                                               &trans        &trans        &trans  &trans  &trans    &trans          &none       &trans
+&kp F1    &kp F2      &kp F3             &kp F4      &kp F5         &kp F6                  &kp F7    &kp F8         &kp F9       &kp F10    &kp F11  &kp F12
+&trans    &none       &kp C_VOL_UP       &none       &none          &none                   &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none    &tog 3
+&kp CAPS  &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_NEXT  &trans         &trans                  &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &trans   &trans
+&trans    &none       &kp C_MUTE         &trans      &trans         &trans  &trans  &trans  &trans    &trans         &trans       &trans     &trans   &tog 4
+                                         &trans      &kp BACKSPACE  &trans  &trans  &trans  &trans    &kp DELETE     &trans
             >;
+        };
 
-            sensor-bindings = <&inc_dec_kp A A>;
+        layer_2 {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans        &trans                            &trans             &trans    &trans     &trans     &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans                            &trans             &trans    &trans     &trans     &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                            &kp NUMBER_6       &kp N7    &kp N8     &kp N9     &kp N0  &trans
+&trans  &trans        &trans        &kp ENTER     &kp MINUS     &kp LEFT_BRACKET  &trans  &trans  &kp RIGHT_BRACKET  &kp PLUS  &kp TILDE  &kp GRAVE  &trans  &trans
+                                    &trans        &trans        &trans            &trans  &trans  &trans             &trans    &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &tog 3
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans            &trans  &trans  &trans  &trans    &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans            &kp Q   &kp W   &kp E   &kp R     &kp T                      &trans  &trans  &trans  &trans  &trans  &tog 3
+&kp LEFT_CONTROL  &kp A   &kp S   &kp D   &kp F     &kp G                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans            &kp Z   &kp X   &kp C   &kp V     &kp B   &trans     &trans  &trans  &trans  &trans  &trans  &trans  &tog 4
+                                  &trans  &kp LGUI  &mo 5   &kp SPACE  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans      &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPS    &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
